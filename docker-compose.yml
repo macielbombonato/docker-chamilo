@@ -1,0 +1,28 @@
+version: "2"
+services:
+  chamilo:
+    image: macielbombonato/docker-chamilo:latest
+    container_name: chamilo
+    ports:
+      - "8080:8080"
+    networks:
+      - chamilonet
+    links:
+      - chamilo_db
+
+  chamilo_db:
+    image: mariadb
+    container_name: chamilo_db
+    networks:
+      - chamilonet
+    environment:
+      - MYSQL_ROOT_PASSWORD=root
+      - MYSQL_USER=chamilo
+      - MYSQL_PASSWORD=chamilo
+      - MYSQL_DATABASE=chamilo
+    volumes:
+      - ~/files/chamilo/maria:/var/lib/mysql
+
+networks:
+  chamilonet:
+    driver: bridge
