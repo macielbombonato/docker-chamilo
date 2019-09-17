@@ -1,5 +1,8 @@
 # docker-chamilo
-
+  
+[![Build Status](https://travis-ci.org/macielbombonato/docker-chamilo.svg?branch=master)](https://travis-ci.org/macielbombonato/docker-chamilo)
+[![DockerHub](http://img.shields.io/:images-dockerhub-brightgreen.svg)](https://hub.docker.com/r/macielbombonato/docker-chamilo)
+  
 Esta imagem usa como ponto de partida a imagem oficial do PHP com apache (php:5.6-apache) e implementa sobre ela as instalações necessárias para conseguir disponibilizar um sistema chamilo totalmente funcional.
 
 Pontos de observação:  
