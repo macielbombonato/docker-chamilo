@@ -35,7 +35,7 @@ docker container run \
     --name chamilo \
     -h chamilo.local \
     -p 8080:80 \
-    --link chamilo_database \
+    --link chamilo_database:db \
     -d \
     macielbombonato/docker-chamilo
 
