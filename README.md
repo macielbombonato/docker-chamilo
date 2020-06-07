@@ -21,6 +21,8 @@ O comando ```docker-compose``` deve funcionar também: [https://docs.docker.com/
 
 ### Executando em sua máquina local:
 
+#### Alternativa 1: docker-compose
+
 Após atender os pré-requisitos, basta baixar este repositório (ou simplesmente o arquivo ```docker-compose.yml```) para algum diretório de sua máquina. 
 
 Antes de executar valide o caminho dos arquivos de banco de dados (procure por **volumes** no arquivo **docker-compose.yml**) e caso necessário ajuste este caminho.
@@ -31,8 +33,29 @@ Vá até o diretório deste arquivo no terminal (DOS, linux Shell) e entre com o
 docker-compose up
 ```
 
-Isso irá subir o serviço de banco de dados e o chamilo, para acessá-lo, vá em seu navegador e digite o seguinte endereço: [http://localhost:8080](http://localhost:8080).
+#### Alternativa 2: Shell script
+
+Neste repositório existem alguns scripts que podem auxiliar em algumas tarefas, dentre elas, inicializar a aplicação.
+
+Para isso, execute:
+
+```
+./install.sh
+./run.sh
+```
+
+#### Resultado
+
+Ambos modos irão subir o serviço de banco de dados e o chamilo, para acessá-lo, vá em seu navegador e digite o seguinte endereço: [http://localhost:8080](http://localhost:8080).
 
 A partir daí é seguir com a configuração e uso do sistema. 
 
 Para saber mais sobre o chamilo, acesse o site oficial do produto [https://chamilo.org/](https://chamilo.org/).
+
+#### Dicas de configuração
+
+Para acessar o banco de dados utilize os seguintes dados (quando solicitado):
+  
+- Hostname: chamilo_database
+- Username: chamilo
+- Password: chamilo

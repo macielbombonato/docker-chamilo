@@ -1,21 +1,10 @@
-docker stop database
-docker rm database
-docker run \
-    -e MYSQL_ROOT_PASSWORD=root \
-    -e MYSQL_USER=chamilo \
-    -e MYSQL_PASSWORD=chamilo \
-    -e MYSQL_DATABASE=chamilo \
-    -d \
-    --name database \
-    -v ~/files/chamilo/maria:/var/lib/mysql \
-    mariadb
+echo "==> Starting database"
+#docker container stop chamilo_database
+#docker container rm chamilo_database -f
+docker container start chamilo_database 
 
-docker stop chamilo
-docker rm chamilo
-docker run -it \
-    --name chamilo \
-    --link database \
-    -p 8080:80 \
-    macielbombonato/docker-chamilo
-
+echo "==> Starting Chamilo"
+#docker container stop chamilo
+#docker container rm chamilo -f
+docker container start chamilo 
 docker logs -f chamilo
